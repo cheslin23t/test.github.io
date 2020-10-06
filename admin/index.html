@@ -4,20 +4,26 @@
 </head>
 <body>
     
-
+    
     <textarea cols="50" rows="10" id="source"></textarea>
     <br>
     <button type="button" id="save" title="Login">Save</button>
-
+    <script src="https://d3js.org/d3.v5.min.js"></script>
     <script type="text/javascript">
+        
+        var pin = require('./conf.json')
         // when document is ready
         document.getElementById("save").onclick = function() {
             // when clicked the button
             var content = document.getElementById('source').value;
             // a [save as] dialog will be shown
-            if (content == '81633') {
+            d3.json("./conf.json").then(function(data_json) {
+         //do your stuff
+  
+            if (content == data_json.pin) {
                 location.replace("https://www.spaceholdtest.tk/admin/81633/admin.html")
             }
+        })
         }
     </script>
 <h3>Go back <a href="https://www.spaceholdtest.tk/home/">home</a></h3>
