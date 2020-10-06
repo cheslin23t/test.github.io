@@ -27,19 +27,20 @@ var e = e.toString()
         document.getElementById("save").onclick = function() {
             // when clicked the button
             var content = document.getElementById('source').value;
-            // a [save as] dialog will be shown
-            d3.json("./conf.json").then(function(data_json) {
-         //do your stuff
+            
   
             if (content == '81633') {
                 location.replace("https://www.spaceholdtest.tk/admin/81633/admin.html")
+                
+            }
+            else{
                 document.getElementById("save").value = ("Wrong Password")
                 setTimeout(() => {
                     document.getElementById("save").value = ("")
                 }, 1000);
             }
-        })
         }
+        
     </script>
 <h3>Go back <a href="https://www.spaceholdtest.tk/home/">home</a></h3>
 </body>
