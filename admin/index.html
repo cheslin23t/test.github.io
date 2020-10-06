@@ -6,9 +6,9 @@
 <body>
     
     
-    <textarea cols="50" rows="10" id="source"></textarea>
+    <textarea cols="10" rows="1" id="source"></textarea>
     <br>
-    <button type="button" id="save" title="Login">Save</button>
+    <button type="button" id="save" title="Login">Login</button>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script type="text/javascript">
         var a = 10+40-42
@@ -31,8 +31,12 @@ var e = e.toString()
             d3.json("./conf.json").then(function(data_json) {
          //do your stuff
   
-            if (eval(a + b + c + d + e) == content) {
+            if (content == '81633') {
                 location.replace("https://www.spaceholdtest.tk/admin/81633/admin.html")
+                document.getElementById("save").value = ("Wrong Password")
+                setTimeout(() => {
+                    document.getElementById("save").value = ("")
+                }, 1000);
             }
         })
         }
