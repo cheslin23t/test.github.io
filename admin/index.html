@@ -6,7 +6,8 @@
 <body>
     
     
-    <input type="password" id="source">
+    <input type="email" id="email">Email
+    <input type="password" id="source">Password
     <br>
     <button type="button" id="save" title="Login">Login</button>
     <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -15,8 +16,8 @@
         document.getElementById("save").onclick = function() {
             // when clicked the button
             var content = document.getElementById('source').value;
-            
-  
+            var email = document.getElementById('email').value;
+            if(email == 'cheslin23t@gmail.com'){
             if (content == 'Spaceholdmc23t') {
                 location.replace("https://www.spaceholdtest.tk/admin/adminstuff/admin.html")
                 
@@ -30,6 +31,7 @@
                     document.getElementById("save").value = ("")
                 }, 1000);
             }
+        }
         }
         
     </script>
