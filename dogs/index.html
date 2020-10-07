@@ -5,6 +5,7 @@
 </head>
 
 <body>
+    <button id="homebutton" style="float: right;color: blue;background-color: yellow;">Home</button>
     <h1>Why I recommend getting a dog!</h1>
     <title>Why is dogs the best pet</title>
     <h2>Made by me.</h2>
@@ -28,7 +29,12 @@
 <p>A beagle!</p>
 
 <h4>This is why I recommend getting a dog!</h4>
-<h5>Go back to the <a href="https://www.spaceholdtest.tk/home">Home page</a></h5>
+<script>
+    
+    document.getElementById("homebutton").onclick = function() {
+        location.replace("https://www.spaceholdtest.tk/home")
+    }
 
+</script>
     
 </body>
