@@ -13,13 +13,20 @@
 </head>
 
 <body>
+    <div>
+        <button id="adminsignin" style="color: yellow;background-color: blue;float: right;border-radius: 12px;height: 1cm;width: 3cm;">Admin Sign In</button>
+    </div>
+    
+    
     <center>
+        <hr style="visibility: hidden;">
         <h1 style="color: aqua;"><b>Spacehold</b></h1>
     <h2 style="color: white;">Pages:</h2>
     <h3 style="color: white;">Why I recommend getting a dog <button id="dogbutton" style="color: blue;background-color: aqua;">here!</button></h3>
     <h3 style="color: white;">Why beagles would be the best dog <button id="beaglebutton" style="color: blue;background-color: aqua;">here!</button></h3>
     <button style="height: .5cm;width: 2cm;color: aqua;background-color: blue;" id='homebutton'>Home</button>
     </center>
+    
     <script>
         document.getElementById('homebutton').onclick = function() {
             location.replace("https://www.spaceholdtest.tk/")
@@ -29,6 +36,9 @@
         }
         document.getElementById('beaglebutton').onclick = function() {
             location.replace("https://www.spaceholdtest.tk/beagles")
+        }
+        document.getElementById('adminsignin').onclick = function() {
+            location.replace("https://www.spaceholdtest.tk/admin/")
         }
     </script>
     
