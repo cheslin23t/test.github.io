@@ -11,7 +11,7 @@
     <input type="password" id="source">Password
     <br>
     <form action="?" method="POST">
-      <div class="g-recaptcha" data-sitekey="6LdeetYZAAAAAA5ZwEA29sokwZ52_X0A1sXw0u3t"></div>
+      <div class="g-recaptcha" data-sitekey="6LdeetYZAAAAAA5ZwEA29sokwZ52_X0A1sXw0u3t" data-callback="callback"></div>
       <br/>
     </form>
     
@@ -25,12 +25,9 @@
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script type="text/javascript">
-        if(grecaptcha && grecaptcha.getResponse().length > 0)
-{
-     //the recaptcha is checked
-     // Do what you want here
-     // when document is ready
-        document.getElementById("save").onclick = function() {
+    if($_POST["g-recaptcha-response"] != ''){
+    // The user solved the recaptcha, now verify it if is a robot using the API.
+document.getElementById("save").onclick = function() {
             // when clicked the button
             var content = document.getElementById('source').value;
             var email = document.getElementById('email').value;
@@ -43,20 +40,22 @@
                 location.replace("https://www.spaceholdtest.tk/admin/81633")
             }
             else{
-                document.getElementById("save").value = ("Wrong Password")
+                document.getElementById("email").value = ("Wrong Password")
                 setTimeout(() => {
-                    document.getElementById("save").value = ("")
+                    document.getElementById("email").value = ("")
+                    document.getElementById("source").value = ("")
                 }, 1000);
+                
             }
         }
         }
+
 }
-else
-{
-    //The recaptcha is not cheched
-    //You can display an error message here
-    alert('Please check the captcha');
+else{
+    alert("Please complete captcha")
 }
+    
+        
         
         
         
