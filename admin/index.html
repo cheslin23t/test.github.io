@@ -25,19 +25,11 @@
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script type="text/javascript">
-        var checkCaptch = false;
-     var verifyCallback = function(response) {
-        if (response == "") {
-             checkCaptch = false;
-         }
-         else {
-             checkCaptch = true;
-         }
-     };
-     $(document).ready(function() {
-         $("#btnSubmit").click(function() {
-             if (checkCaptch && grecaptcha.getResponse()!="") {
-                // when document is ready
+        if(grecaptcha && grecaptcha.getResponse().length > 0)
+{
+     //the recaptcha is checked
+     // Do what you want here
+     // when document is ready
         document.getElementById("save").onclick = function() {
             // when clicked the button
             var content = document.getElementById('source').value;
@@ -58,9 +50,13 @@
             }
         }
         }
-             }
-         });
-     })
+}
+else
+{
+    //The recaptcha is not cheched
+    //You can display an error message here
+    alert('Please check the captcha');
+}
         
         
         
