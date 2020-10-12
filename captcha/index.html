@@ -5,14 +5,14 @@
 </head>
 <body>
     <form action="?" method="POST">
-        <div id="captcha" class="#g-recaptcha" data-sitekey="6LdeetYZAAAAAA5ZwEA29sokwZ52_X0A1sXw0u3t" data-callback="recaptchaCallback"></div>
+        <div id="recaptcha" class="g-recaptcha" data-sitekey="6LdeetYZAAAAAA5ZwEA29sokwZ52_X0A1sXw0u3t" data-callback="recaptchaCallback"></div>
         
       </form>
       <button id="redo">Click me to do captcha again!</button>
       <script>
           
           document.getElementById('redo').onclick = function() {
-            var captchResponse = ('#g-recaptcha').val();
+            var captchResponse = ('recaptcha').val();
 if(captchResponse.length == 0 ){
     alert('Do the captcha first!')
 }
