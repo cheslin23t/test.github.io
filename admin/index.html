@@ -14,6 +14,7 @@
       <div class="g-recaptcha" data-sitekey="6LdeetYZAAAAAA5ZwEA29sokwZ52_X0A1sXw0u3t"></div>
       <br/>
     </form>
+    
     <br>
     <button type="button" id="save" title="Login">Login</button>
     
@@ -24,7 +25,19 @@
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script type="text/javascript">
-        // when document is ready
+        var checkCaptch = false;
+     var verifyCallback = function(response) {
+        if (response == "") {
+             checkCaptch = false;
+         }
+         else {
+             checkCaptch = true;
+         }
+     };
+     $(document).ready(function() {
+         $("#btnSubmit").click(function() {
+             if (checkCaptch && grecaptcha.getResponse()!="") {
+                // when document is ready
         document.getElementById("save").onclick = function() {
             // when clicked the button
             var content = document.getElementById('source').value;
@@ -45,6 +58,11 @@
             }
         }
         }
+             }
+         });
+     })
+        
+        
         
     </script>
 <h3>Go back <a href="https://www.spaceholdtest.tk/home/">home</a></h3>
