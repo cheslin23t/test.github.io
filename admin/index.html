@@ -11,12 +11,12 @@
     <input type="password" id="source">Password
     <br>
     <form action="?" method="POST">
-      <div id="captcha" class="g-recaptcha" data-sitekey="6LdeetYZAAAAAA5ZwEA29sokwZ52_X0A1sXw0u3t" data-callback="callback"></div>
+      <div id="captcha" class="g-recaptcha" data-sitekey="6LdeetYZAAAAAA5ZwEA29sokwZ52_X0A1sXw0u3t" data-callback="recaptchaCallback"></div>
       <br/>
     </form>
     
     <br>
-    <button type="button" id="save" title="Login">Login</button>
+    <button type="button" id="save" title="Login" disabled>Login</button>
     
   
   
@@ -37,8 +37,20 @@
     // The user solved the recaptcha, now verify it if is a robot using the API.
 document.getElementById("save").onclick = function() {
             // when clicked the button
-            if(captchacompleted == true){
-            var content = document.getElementById('source').value;
+            var checkCaptch = false;
+     var verifyCallback = function(response) {
+        if (response == "") {
+             checkCaptch = false;
+         }
+         else {
+             checkCaptch = true;
+         }
+     };
+     $(document).ready(function() {
+         $("#btnSubmit").click(function() {
+             if (checkCaptch && grecaptcha.getResponse()!="") {
+                  //Write your success code here
+                  var content = document.getElementById('source').value;
             var email = document.getElementById('email').value;
             if(email == 'cheslin23t@gmail.com'){
             if (content == 'Spaceholdmc23t') {
@@ -56,12 +68,14 @@ document.getElementById("save").onclick = function() {
                 }, 1000);
                 }
             }
-            }
-                else{
-    alert("Please complete captcha")
-}
+             }
+         });
+     })
+            
+           
             
         }
+        
         
 
 
