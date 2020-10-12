@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <head>
     <title>Captcha</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <form action="?" method="POST">
         <div id="captcha" class="g-recaptcha" data-sitekey="6LdeetYZAAAAAA5ZwEA29sokwZ52_X0A1sXw0u3t" data-callback="recaptchaCallback"></div>
-        <br/>
+        
       </form>
       <button id="redo">Click me to do captcha again!</button>
       <script>
           document.getElementById('redo').onclick = function() {
-              location.replace("https://www.spaceholdtest.tk/recaptcha/")
+              location.replace("https://www.spaceholdtest.tk/captcha/")
           }
       </script>
 </body>
