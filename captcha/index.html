@@ -1,27 +1,12 @@
-<!DOCTYPE html>
-<head>
-    <title>Captcha</title>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
-<body>
+<html><head>
+    <title>reCAPTCHA demo: Simple page</title>
+    <script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
+  </head>
+  <body>
     <form action="?" method="POST">
-        <div id="recaptcha" class="g-recaptcha" data-sitekey="6LdeetYZAAAAAA5ZwEA29sokwZ52_X0A1sXw0u3t" data-callback="recaptchaCallback"></div>
-        
-      </form>
-      <button id="redo">Click me to do captcha again!</button>
-      <script>
-          
-          document.getElementById('redo').onclick = function() {
-            var captchResponse = ('recaptcha').valueOf()
-if(captchResponse.length == 0 ){
-    console.log(captchResponse + '     Not clicked')
-}
-    
-else {
-            
-            console.log(captchResponse)
-              
-          }
-          }
-      </script>
-</body>
+      <div class="g-recaptcha" data-sitekey="6LdeetYZAAAAAA5ZwEA29sokwZ52_X0A1sXw0u3t"></div>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+  
+</body></html>
