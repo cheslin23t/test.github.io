@@ -29,7 +29,10 @@
     var captchacompleted = false
     captcha.onclick = function(){
         var captchacompleted = true
+        console.log('1')
     }
+    console.log(captcha)
+    console.log(captchacompleted)
     
     // The user solved the recaptcha, now verify it if is a robot using the API.
 document.getElementById("save").onclick = function() {
