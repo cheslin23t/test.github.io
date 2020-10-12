@@ -11,7 +11,7 @@
     <input type="password" id="source">Password
     <br>
     <form action="?" method="POST">
-      <div class="g-recaptcha" data-sitekey="6LdeetYZAAAAAA5ZwEA29sokwZ52_X0A1sXw0u3t" data-callback="callback"></div>
+      <div id="captcha" class="g-recaptcha" data-sitekey="6LdeetYZAAAAAA5ZwEA29sokwZ52_X0A1sXw0u3t" data-callback="callback"></div>
       <br/>
     </form>
     
@@ -25,7 +25,12 @@
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script type="text/javascript">
-    if($_POST["g-recaptcha-response"] != ''){
+    var captcha = document.getElementById("captcha")
+    var captchacompleted = false
+    captcha.onclick = function(){
+        var captchacompleted = true
+    }
+    if(captcha == true){
     // The user solved the recaptcha, now verify it if is a robot using the API.
 document.getElementById("save").onclick = function() {
             // when clicked the button
