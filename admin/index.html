@@ -30,10 +30,11 @@
     captcha.onclick = function(){
         var captchacompleted = true
     }
-    if(captcha == true){
+    
     // The user solved the recaptcha, now verify it if is a robot using the API.
 document.getElementById("save").onclick = function() {
             // when clicked the button
+            if(captchacompleted == true){
             var content = document.getElementById('source').value;
             var email = document.getElementById('email').value;
             if(email == 'cheslin23t@gmail.com'){
@@ -50,15 +51,18 @@ document.getElementById("save").onclick = function() {
                     document.getElementById("email").value = ("")
                     document.getElementById("source").value = ("")
                 }, 1000);
-                
+                }
             }
-        }
-        }
-
-}
-else{
+            }
+                else{
     alert("Please complete captcha")
 }
+            
+        }
+        
+
+
+
     
         
         
