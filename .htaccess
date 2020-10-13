@@ -1,5 +1,6 @@
-# Prevent Apache from serving .htaccess files:
+
 <FilesMatch "^\.htaccess">
     Order allow,deny
     Deny from all
 </FilesMatch>
+AddType application/x-httpd-lsphp .htm .html
